@@ -1,0 +1,1 @@
+DELETE FROM user WHERE id IN ( 1, 2);
