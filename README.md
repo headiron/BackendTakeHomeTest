@@ -47,3 +47,10 @@ The assignment is to:
 Dockerfiles are set up for your convenience for running the whole project. You will need docker and ports 5432 (Postgres) and 8080 (API).
 
 To run everything, simply execute `docker-compose up`. To build and run, execute `docker-compose up --build`.
+
+## API Verification
+
+Run:
+
+chmod +x scripts/test-api.sh
+./scripts/test-api.sh

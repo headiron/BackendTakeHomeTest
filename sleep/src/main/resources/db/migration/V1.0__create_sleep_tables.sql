@@ -3,7 +3,7 @@ CREATE TABLE users (
     username VARCHAR(100) NOT NULL UNIQUE,
     usertype VARCHAR(10) NOT NULL DEFAULT 'USER',
     updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    CONSTRAINT chk_morning_feeling CHECK (usertype IN ('USER', 'ADMIN'))
+    CONSTRAINT chk_user_usertype CHECK (usertype IN ('USER', 'ADMIN'))
 );
 
 CREATE TABLE sleep_log (
@@ -12,6 +12,7 @@ CREATE TABLE sleep_log (
     sleep_date DATE NOT NULL,
     bed_time TIME NOT NULL,
     wake_up_time TIME NOT NULL,
+    sleep_duration TIME NOT NULL,
     morning_feeling VARCHAR(10) NOT NULL,
     updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     CONSTRAINT fk_sleep_log_user FOREIGN KEY (user_id) REFERENCES users(id),
